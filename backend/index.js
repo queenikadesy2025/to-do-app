@@ -26,8 +26,7 @@ app.use(cors("﹡")); //Enables use of CORS - ﹡ means every domain is now allo
     try {
         mongoose.set("autoIndex", false);
 
-        await mongoose.connect("mongodb+srv://rikayantidesy_db_user:D7LIVugwyX9XiTDo@to-do-app-2513.nto66dk.mongodb.net/?appName=to-do-app-2513");
-        console.log("✅ Database connected");
+        await mongoose.connect("process.env.MONGO_URI");
 
         await Task.syncIndexes();
         console.log(`✅ Indexes created!`);
