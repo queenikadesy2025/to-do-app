@@ -6,7 +6,7 @@ const mongoose = require("mongoose"); //Enables us to connect and interact with 
 
 
 // ---------------------------------------------------- INITIAL APP CONFIGURATION ----------------------------------------------------
-
+console.log(process.env.MONGO_URI);
 const port = process.env.PORT || 3000; //Uses port number on device to serve the backend
 const app = express(); // Using expres.js to power our application/server
 
@@ -26,7 +26,7 @@ app.use(cors("﹡")); //Enables use of CORS - ﹡ means every domain is now allo
     try {
         mongoose.set("autoIndex", false);
 
-        await mongoose.connect(process.env.MONGO_URI);
+        await mongoose.connect("mongodb+srv://rikayantidesy_db_user:D7LIVugwyX9XiTDo@to-do-app-2513.nto66dk.mongodb.net/?appName=to-do-app-2513");
         console.log("✅ Database connected");
 
         await Task.syncIndexes();

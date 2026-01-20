@@ -94,9 +94,6 @@ async function displayTasks() {
         query = `?sortBy=${sortBy}`;
     }
 
-
-
-
     try {
         const response = await fetch(`${url}/api/tasks${query}`);
 
